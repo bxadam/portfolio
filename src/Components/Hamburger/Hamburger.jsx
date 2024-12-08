@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Hamburger.css";
+import motherBoard from "../../../utils/assets/motherBoard.svg";
 
 const Hamburger = () => {
   const [isActive, setIsActive] = useState(false);
@@ -13,25 +14,27 @@ const Hamburger = () => {
   };
 
   return (
-    <div
-      className="hamburger__wrapper"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="hamburger__menu">
-        <div className={`hamburger__line ${isActive ? "active" : ""}`}></div>
-        <div className={`hamburger__line ${isActive ? "active" : ""}`}></div>
-        <div className={`hamburger__line ${isActive ? "active" : ""}`}></div>
+    <>
+      <div
+        className="hamburger__menu"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <img
+          src={motherBoard}
+          alt="motherboard"
+          className={`hamburger__image ${isActive ? "active" : ""}`}
+        />
+        {isActive && (
+          <div className="hamburger__dropdown">
+            <button className="hamburger__item">Home</button>
+            <button className="hamburger__item">About</button>
+            <button className="hamburger__item">Services</button>
+            <button className="hamburger__item">Contact</button>
+          </div>
+        )}
       </div>
-      {isActive && (
-        <div className="hamburger__dropdown">
-          <button className="hamburger__item">Home</button>
-          <button className="hamburger__item">About</button>
-          <button className="hamburger__item">Services</button>
-          <button className="hamburger__item">Contact</button>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

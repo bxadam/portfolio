@@ -20,20 +20,20 @@
   transition: all 0.3s ease;
 }
 
-.hamburger__line.active {
+.hamburger__image.active {
   display: none;
 }
 
 .hamburger__dropdown {
   position: absolute;
-  top: 0; /* Adjust based on your header height */
-  left: 0px;
+  top: 5px; /* Adjust based on your header height */
+  left: 5px;
   background-color: #be9b7b;
   width: 100%;
   max-width: 200px;
   display: flex;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 8px;
 }
 
 .hamburger__item:last-child {
